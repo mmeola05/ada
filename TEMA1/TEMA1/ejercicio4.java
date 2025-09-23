@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class ejercicio4 {
     public static void main(String[] args) {
-        final String RUTAFICHERO = "C:\\Users\\marmeoesc\\Documents\\TEMA1\\TEMA1\\ficheros\\prueba.txt";
+        final String RUTAFICHERO = "C:\\Users\\marcm\\Documents\\ADA\\TEMA1\\TEMA1\\TEMA1\\ficheros\\prueba.txt";
         File fichero = new File(RUTAFICHERO);
 
          if (!fichero.exists() || !fichero.isFile()) {

@@ -1,12 +1,17 @@
 package TEMA1;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 
 public class GestionArchivos {
+
     public static boolean crearArchivo(String directorio, String archivo) {
         File carpeta = new File(directorio);
         if (!carpeta.exists()) {
@@ -65,8 +70,7 @@ public class GestionArchivos {
             return;
         }
 
-        try (FileReader lector = new FileReader(fichero);
-            BufferedReader br = new BufferedReader(lector)) {
+        try (FileReader lector = new FileReader(fichero); BufferedReader br = new BufferedReader(lector)) {
 
             String linea;
             System.out.println("Contenido de " + archivo + ":");
@@ -113,8 +117,7 @@ public class GestionArchivos {
             return false;
         }
 
-        try (FileInputStream fis1 = new FileInputStream(f1);
-             FileInputStream fis2 = new FileInputStream(f2)) {
+        try (FileInputStream fis1 = new FileInputStream(f1); FileInputStream fis2 = new FileInputStream(f2)) {
 
             int b1, b2;
             while ((b1 = fis1.read()) != -1) {
@@ -130,4 +133,46 @@ public class GestionArchivos {
 
         return true;
     }
+
+    public static void concat(File archivo1, File archivo2, File archivoSalida) {
+        try (
+                FileReader lector1 = new FileReader(archivo1); BufferedReader br1 = new BufferedReader(lector1); FileReader lector2 = new FileReader(archivo2); BufferedReader br2 = new BufferedReader(lector2); FileWriter escritor = new FileWriter(archivoSalida); BufferedWriter bw = new BufferedWriter(escritor)) {
+            String linea;
+
+            while ((linea = br1.readLine()) != null) {
+                bw.write(linea);
+                bw.newLine();
+            }
+
+            while ((linea = br2.readLine()) != null) {
+                bw.write(linea);
+                bw.newLine();
+            }
+
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public static void concatLines(File archivo1, File archivo2, File archivoSalida) {
+        try (
+                FileReader lector1 = new FileReader(archivo1); BufferedReader br1 = new BufferedReader(lector1); FileReader lector2 = new FileReader(archivo2); BufferedReader br2 = new BufferedReader(lector2); FileWriter escritor = new FileWriter(archivoSalida); BufferedWriter bw = new BufferedWriter(escritor)) {
+            String linea1, linea2;
+
+            while ((linea1 = br1.readLine()) != null | (linea2 = br2.readLine()) != null) {
+                if (linea1 == null) {
+                    linea1 = "";
+                }
+                if (linea2 == null) {
+                    linea2 = "";
+                }
+                bw.write(linea1 + linea2);
+                bw.newLine();
+            }
+
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
 }

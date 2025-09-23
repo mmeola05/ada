@@ -2,7 +2,7 @@ package TEMA1;
 
 import java.io.File;
 
-public class Ejercicio2 {
+public class ejercicio2 {
     public static void main(String[] args) {
         final String RUTACARPETA = "C:\\Users\\marmeoesc\\Documents\\TEMA1\\TEMA1";
         File carpeta = new File(RUTACARPETA);

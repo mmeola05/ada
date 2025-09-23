@@ -4,7 +4,7 @@ import java.io.File;
 
 public class ejercicio3 {
     public static void main(String[] args) {
-        final String RUTACARPETA = "C:\\Users\\marmeoesc\\Documents\\TEMA1\\TEMA1";
+        final String RUTACARPETA = "C:\\Users\\marcm\\Documents\\ADA\\TEMA1\\TEMA1\\TEMA1";
         File carpeta = new File(RUTACARPETA);
 
         if (!carpeta.exists() || !carpeta.isDirectory()) {
