@@ -4,11 +4,9 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
 
 public class GestionArchivos {
 
@@ -117,7 +115,8 @@ public class GestionArchivos {
             return false;
         }
 
-        try (FileInputStream fis1 = new FileInputStream(f1); FileInputStream fis2 = new FileInputStream(f2)) {
+        try (FileInputStream fis1 = new FileInputStream(f1);
+             FileInputStream fis2 = new FileInputStream(f2)) {
 
             int b1, b2;
             while ((b1 = fis1.read()) != -1) {
@@ -136,7 +135,12 @@ public class GestionArchivos {
 
     public static void concat(File archivo1, File archivo2, File archivoSalida) {
         try (
-                FileReader lector1 = new FileReader(archivo1); BufferedReader br1 = new BufferedReader(lector1); FileReader lector2 = new FileReader(archivo2); BufferedReader br2 = new BufferedReader(lector2); FileWriter escritor = new FileWriter(archivoSalida); BufferedWriter bw = new BufferedWriter(escritor)) {
+                FileReader lector1 = new FileReader(archivo1);
+                BufferedReader br1 = new BufferedReader(lector1);
+                FileReader lector2 = new FileReader(archivo2);
+                BufferedReader br2 = new BufferedReader(lector2);
+                FileWriter escritor = new FileWriter(archivoSalida);
+                BufferedWriter bw = new BufferedWriter(escritor)) {
             String linea;
 
             while ((linea = br1.readLine()) != null) {
@@ -156,7 +160,12 @@ public class GestionArchivos {
 
     public static void concatLines(File archivo1, File archivo2, File archivoSalida) {
         try (
-                FileReader lector1 = new FileReader(archivo1); BufferedReader br1 = new BufferedReader(lector1); FileReader lector2 = new FileReader(archivo2); BufferedReader br2 = new BufferedReader(lector2); FileWriter escritor = new FileWriter(archivoSalida); BufferedWriter bw = new BufferedWriter(escritor)) {
+                FileReader lector1 = new FileReader(archivo1);
+                BufferedReader br1 = new BufferedReader(lector1);
+                FileReader lector2 = new FileReader(archivo2);
+                BufferedReader br2 = new BufferedReader(lector2);
+                FileWriter escritor = new FileWriter(archivoSalida);
+                BufferedWriter bw = new BufferedWriter(escritor)) {
             String linea1, linea2;
 
             while ((linea1 = br1.readLine()) != null | (linea2 = br2.readLine()) != null) {
