@@ -1,7 +1,6 @@
-package TEMA1;
+package TEMA1.Boletin01;
 
 import java.io.File;
-import java.time.*;
 import java.util.Date;
 
 public class ejercicio4 {

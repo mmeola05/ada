@@ -1,4 +1,4 @@
-package TEMA1;
+package TEMA1.Boletin01;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -68,7 +68,8 @@ public class GestionArchivos {
             return;
         }
 
-        try (FileReader lector = new FileReader(fichero); BufferedReader br = new BufferedReader(lector)) {
+        try (FileReader lector = new FileReader(fichero); 
+        BufferedReader br = new BufferedReader(lector)) {
 
             String linea;
             System.out.println("Contenido de " + archivo + ":");

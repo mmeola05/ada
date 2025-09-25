@@ -1,8 +1,4 @@
-package TEMA1;
-
-import java.io.File;
-import java.util.Date;
-import java.util.Scanner;
+package TEMA1.Boletin01;
 
 public class ejercicio5 {
      public static void main(String[] args) {

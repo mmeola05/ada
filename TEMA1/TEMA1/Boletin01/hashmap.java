@@ -1,4 +1,4 @@
-package TEMA1;
+package TEMA1.Boletin01;
 import java.util.*;
 
 public class hashmap {

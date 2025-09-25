@@ -1,4 +1,4 @@
-package TEMA1;
+package TEMA1.Boletin01;
 
 public class ejercicio7 {
     public static void main(String[] args) {
