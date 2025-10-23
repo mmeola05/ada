@@ -1,16 +1,18 @@
 package TEMA1.Boletin03.Ejercicio6;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ControladorAlumnos {
-    public List<Alumno> cargarAlumnos(String rutaArchivo) throws Exception{
+    public List<Alumno> cargarAlumnos(String rutaArchivo) throws IOException, JSONException {
         List<Alumno> listaAlumnos = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
         try(BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))){

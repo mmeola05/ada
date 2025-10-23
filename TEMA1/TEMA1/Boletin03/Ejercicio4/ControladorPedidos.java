@@ -1,13 +1,16 @@
 package TEMA1.Boletin03.Ejercicio4;
 
 import org.w3c.dom.*;
+import org.xml.sax.SAXException;
+
 import javax.xml.parsers.*;
+import java.io.IOException;
 import java.util.*;
 
 public class ControladorPedidos {
     private List<Pedido> listaPedidos = new ArrayList<>();
 
-    public void procesarXML(String rutaXML) throws Exception {
+    public void cargarPedidos(String rutaXML) throws  ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(rutaXML);

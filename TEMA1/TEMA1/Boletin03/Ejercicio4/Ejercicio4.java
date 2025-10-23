@@ -6,7 +6,7 @@ public class Ejercicio4 {
     public static void main(String[] args) {
         try {
             ControladorPedidos controlador = new ControladorPedidos();
-            controlador.procesarXML("TEMA1/TEMA1/Boletin03/Datasets-20251016/pedidos.xml");
+            controlador.cargarPedidos("TEMA1/TEMA1/Boletin03/Datasets-20251016/pedidos.xml");
 
             Scanner sc = new Scanner(System.in);
             System.out.print("Introduce el ID del pedido: ");
