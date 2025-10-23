@@ -33,7 +33,6 @@ public class ControladorEmpleados {
 
         for (int i = 0; i < nodos.getLength(); i++) {
             Node nodo = nodos.item(i);
-            if (nodo.getNodeType() == Node.ELEMENT_NODE) {
                 Element emp = (Element) nodo;
                 String id = emp.getAttribute("id");
                 String nombre = emp.getElementsByTagName("nombre").item(0).getTextContent();
@@ -41,7 +40,6 @@ public class ControladorEmpleados {
                 double  salario = Double.parseDouble(emp.getElementsByTagName("salario").item(0).getTextContent());
                 String fechaAlta = emp.getElementsByTagName("fechaAlta").item(0).getTextContent();
                 lista.add(new Empleado(id, nombre,departamento, salario,fechaAlta));
-            }
         }
 
         return lista;

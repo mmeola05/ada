@@ -33,10 +33,10 @@ public class Ejercicio4 {
             double recalculado = pedido.recalcularTotal();
             double original = pedido.getTotal();
 
-            System.out.println("\nTotal calculado: " + recalculado + " €");
-            System.out.println("Total en XML:   " + original + " €");
+            System.out.println("Total calculado: " + recalculado + " €");
+            System.out.println("Total en Original:   " + original + " €");
 
-            if (Math.abs(recalculado - original) < 0.01) {
+            if (Math.round(recalculado) == Math.round(original)) {
                 System.out.println("El total coincide.");
             } else {
                 System.out.println("El total no coincide.");
