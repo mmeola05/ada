@@ -37,7 +37,6 @@ public class ControladorEmpleados {
                 String salario = emp.getElementsByTagName("salario").item(0).getTextContent();
                 String fechaAlta = emp.getElementsByTagName("fechaAlta").item(0).getTextContent();
                 lista.add(new Empleado(id, nombre,departamento, salario,fechaAlta));
-
         }
 
         return lista;

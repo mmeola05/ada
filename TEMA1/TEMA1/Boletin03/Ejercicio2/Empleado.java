@@ -36,6 +36,19 @@ public class Empleado {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Empleado empleado = (Empleado) o;
+        return id.equals(empleado.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
+    }
+
+    @Override
     public String toString() {
         return String.format("ID: %s | Nombre: %s | Departamento: %s | Salario: %.2f",
                 id, nombre, departamento, salario);

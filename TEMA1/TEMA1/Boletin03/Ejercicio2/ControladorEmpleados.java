@@ -27,8 +27,6 @@ public class ControladorEmpleados {
     public List<Empleado> getEmpleados() {
         List<Empleado> lista = new ArrayList<>();
 
-        if (doc == null) return lista;
-
         NodeList nodos = doc.getElementsByTagName("empleado");
 
         for (int i = 0; i < nodos.getLength(); i++) {
